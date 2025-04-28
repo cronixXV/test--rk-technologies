@@ -18,7 +18,7 @@ export const useCatImage = () => {
   }, [enabled]);
 
   useEffect(() => {
-    let interval: NodeJS.Timeout | null = null;
+    let interval: ReturnType<typeof setInterval> | null = null;
 
     if (autoRefresh && enabled) {
       interval = setInterval(getCat, 5000);
